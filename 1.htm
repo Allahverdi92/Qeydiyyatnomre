@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>JS</title>
+    </head>
+    <body>
+        
+
+        <input type="text" id="eded" onkeyup="Hesabla()"/>
+        
+        <div id="cvb"></div>
+        <div id="cavab"></div>
+
+
+        <script>
+
+           function Hesabla(){
+               let n = document.getElementById("eded").value;
+
+               let f = i = 1; cvb = "";
+               cvb = n+"!= ";
+
+               for (; i<=n; i++){
+                   f = f*i;
+                  cvb += i<n ? f +" * " : " = " + f;
+               }
+
+               document.getElementById("cvb").innerText = cvb;
+           }
+
+
+
+let cavab = "";
+
+
+for (let i=2; i<=12; i++){
+    for(let j=1; j<=10; j++){
+        cavab += `${i}*${j} = ${i*j}<br />`
+    }
+cavab += "<hr />"
+}
+
+document.getElementById("cavab").innerHTML = cavab;
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JS</title>
+</head>
+
+<body>
+
+
+
+
+    <select id="ray"></select>
+    <input type="text" maxlength="2" minlength="2" id="esas" required="required" />
+    <select id="nom"></select>
+
+
+    <script>
+          document.getElementById("esas").style.width = "50px";
+        Nom();
+        function Nom() {
+            let n = "";
+            for (let i = 1; i <= 999; i++) {
+                if (i < 10)
+                    n += `<option value="00${i}">00${i}</option>`;
+                else if (i > 9 && i < 100)
+                    n += `<option value="0${i}">0${i}</option>`;
+                else
+                    n += `<option value="${i}">${i}</option>`;
+            }
+            document.getElementById("nom").innerHTML = n;
+        }
+
+        
+        function Ray() {
+            let m = "";
+        
+            for (let i = 1; i <= 76; i++) {
+                
+                if (i < 10)
+                    m += `<option value="0${i}">0${i}</option>`;
+                else if (i > 9 && i <= 12)
+                    m += `<option value="${i}">${i}</option>`
+                else if (i >= 12 && i <= 74)
+                    m += `<option value="${i}">${i + 1}</option>`;
+
+                else if (i == 75)
+                    m += `<option value="${i}">${i+15}</option>`;
+                else if (i == 76)
+                    m += `<option value="${i}">${i + 23}</option>`;
+                
+                else
+                    m += `<option value="${i}">${i}</option>`;
+            }
+            document.getElementById("ray").innerHTML = m;
+        }
+        Ray();
+
+    </script>
+
+</body>
+
+</html>
